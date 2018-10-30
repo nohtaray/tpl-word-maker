@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tpl word maker</title>
+  <script type="text/javascript" src="./tsuikyo_203.js"></script>
+  <style>
+    body {
+      margin: 20px;
+      height: 100%;
+    }
+
+    textarea {
+      width: 50%;
+      height: 300px
+    }
+  </style>
+</head>
+<body>
+TypeLighter のワードファイルを生成します。1行ずつひらがなを入れてね。できたら「生成」ボタンを押してね。
+<p>
+  <textarea id="kana"></textarea>
+</p>
+<p>
+  <input type="checkbox" id="lowercase" checked><label for="lowercase">大文字を小文字にする</label><br>
+  <input type="checkbox" id="remove-spaces" checked><label for="remove-spaces">スペースを除去する</label>
+</p>
+<button id="submit">生成</button>
+</body>
+<script type="text/javascript" src="./main.js"></script>
+</html>
