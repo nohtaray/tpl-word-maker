@@ -13,7 +13,9 @@ const makeTPLFile = (kanas, romas) => {
   <Ranking3/>
 `;
   for (let i = 0; i < kanas.length; i++) {
-    contents += `<Word word="${kanas[i]}" roman="${romas[i]}" best1="0" best2="0" best3="0" star="0" try="0"/>` + '\n';
+    // 英語は roman に全部入れないと c/k 打ち分けできたり最後の n を2個打たないといけなくなる
+    const kana = kanas[i].match(/^[\x20-\x7E]*$/) ? '' : kanas[i];
+    contents += `<Word word="${kana}" roman="${romas[i]}" best1="0" best2="0" best3="0" star="0" try="0"/>` + '\n';
   }
   contents += '</Words>';
 
